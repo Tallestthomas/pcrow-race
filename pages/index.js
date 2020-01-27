@@ -1,7 +1,6 @@
 import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
-import Navigation from "../components/Navigation";
-import Hero from "../components/Hero";
+import { Hero, MapSection, Rules, Racers } from "../components";
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -28,9 +27,11 @@ const Container = styled.div`
 export default () => (
   <React.Fragment>
     <GlobalStyle />
-    <Hero>
-      <Navigation />
-    </Hero>
-    <Container></Container>
+    <Hero />
+    <Container>
+      <MapSection />
+      <Rules />
+      <Racers />
+    </Container>
   </React.Fragment>
 );
