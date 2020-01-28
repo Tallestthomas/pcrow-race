@@ -10,6 +10,10 @@ font-weight: normal;
 src: local('/Plumpfull Black'), url('/Plumpfull.woff') format('woff');
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #fefefe;
   font-size: 16px;
@@ -19,7 +23,6 @@ body {
 `;
 const Container = styled.div`
   max-width: 960px;
-  width: 100%;
   padding: 0 1rem;
   margin: 0 auto;
 `;
@@ -29,7 +32,6 @@ export default () => (
     <GlobalStyle />
     <Hero />
     <Container>
-      <MapSection />
       <Rules />
       <Racers />
     </Container>
