@@ -26,10 +26,19 @@ const RacerContainer = styled.div`
  *
  */
 
+const tallestthomas = {
+  username: "TallestThomas",
+  socials: {
+    twitch: "tallestthomas",
+    twitter: "tallestthomas",
+    instagram: "tallestthomas"
+  }
+};
+
 export default () => (
   <Section title="Racers">
     <RacerContainer>
-      <RacerCard username="TallestThomas" />
+      <RacerCard username={tallestthomas.username} socials={tallestthomas.socials} />
       <RacerCard username="PointCrow" />
       <RacerCard username="TallestThomas" />
       <RacerCard username="PointCrow" />
