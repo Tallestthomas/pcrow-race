@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import Avatar from "./shared/Avatar";
-import ConditionalRender from "./shared/ConditionalRender";
+import React from 'react';
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import Avatar from './shared/Avatar';
+import ConditionalRender from './shared/ConditionalRender';
 
 const Card = styled.div`
   padding: 0.5rem;
@@ -11,8 +12,7 @@ const Card = styled.div`
   margin: 0.5rem 0;
   margin-right: 1rem;
   flex: 1 0 25%;
-  box-shadow: ${props =>
-    !props.isListItem ? "2px 2px 4px rgba(0, 0, 0, 0.3)" : ""};
+  box-shadow: ${(props) => (!props.isListItem ? '2px 2px 4px rgba(0, 0, 0, 0.3)' : '')};
 
   &:first-child {
     margin-left: 0;
@@ -45,9 +45,14 @@ const SocialLink = styled.a`
   margin-right: 1rem;
 `;
 
-export default ({ username, isListItem, socials = {} }) => (
+// TODO:  <29-01-20> //
+// Social Icons
+// Implement avatars
+const RacerCard = ({
+  username, isListItem, socials = {}, profileImage,
+}) => (
   <Card isListItem={isListItem}>
-    <Avatar height="50px" width="50px" image="https://placehold.it/50x50" />
+    <Avatar height="50px" width="50px" image={profileImage} />
     <RacerInfo>
       <RacerName href={`https://twitch.tv/${username}`}>
         <h3>{username}</h3>
@@ -77,3 +82,29 @@ export default ({ username, isListItem, socials = {} }) => (
     </RacerInfo>
   </Card>
 );
+
+
+RacerCard.propTypes = {
+  username: PropTypes.string.isRequired,
+  isListItem: PropTypes.bool,
+  profileImage: PropTypes.string.isRequired,
+  socials: PropTypes.shape({
+    twitch: PropTypes.string,
+    youtube: PropTypes.string,
+    twitter: PropTypes.string,
+    instagram: PropTypes.string,
+  }),
+};
+
+RacerCard.defaultProps = {
+  isListItem: false,
+  socials: {
+    twitch: undefined,
+    youtube: undefined,
+    twitter: undefined,
+    instagram: undefined,
+  },
+};
+
+
+export default RacerCard;
