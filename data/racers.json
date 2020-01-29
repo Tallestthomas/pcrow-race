@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "username": "TallestThomas",
+      "socials": {
+        "twitch": "tallestthomas",
+        "twitter": "tallestthomas",
+        "instagram": "tallestthomas"
+      },
+      "profileImage": "https://placekitten.com/50/50"
+    },
+    {
+      "username": "PointCrow",
+      "socials": {
+        "twitch": "PointCrow",
+        "youtube": "PointCrow",
+        "twitter": "PointCrow",
+        "instagram": "PointCrow"
+      },
+      "profileImage": "https://placekitten.com/50/50"
+    },
+    {
+      "username": "Nightbot",
+      "socials": {
+        "twitch": "nightbot",
+        "twitter": "nightbot",
+        "instagram": "nightbot"
+      },
+      "profileImage": "https://placekitten.com/50/50"
+    }
+  ]
+}
