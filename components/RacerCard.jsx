@@ -1,8 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDiscord, faYoutube, faTwitch, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Avatar from './shared/Avatar';
 import ConditionalRender from './shared/ConditionalRender';
+import getProfilePicture from '../util/getProfilePicture';
 
 const Card = styled.div`
   padding: 0.5rem;
@@ -43,51 +46,79 @@ const RacerName = styled.a`
 
 const SocialLink = styled.a`
   margin-right: 1rem;
+
+  .svg-inline--fa {
+    color: #26a015;
+    transition: 0.25s color ease-in-out;
+  }
+
+  .svg-inline--fa:hover {
+    color: #3ce224;
+  }
 `;
 
-// TODO:  <29-01-20> //
-// Social Icons
-// Implement avatars
-const RacerCard = ({
-  username, isListItem, socials = {}, profileImage,
-}) => (
-  <Card isListItem={isListItem}>
-    <Avatar height="50px" width="50px" image={profileImage} />
-    <RacerInfo>
-      <RacerName href={`https://twitch.tv/${username}`}>
-        <h3>{username}</h3>
-      </RacerName>
-      <ConditionalRender condition={!isListItem}>
-        <ConditionalRender condition={socials.twitch}>
-          <SocialLink href={`https://twitch.tv/${socials.twitch}`}>
-            <img src="https://placehold.it/24x16" />
-          </SocialLink>
-        </ConditionalRender>
-        <ConditionalRender condition={socials.youtube}>
-          <SocialLink href={`https://youtube.com/${socials.youtube}`}>
-            <img src="https://placehold.it/24x16" />
-          </SocialLink>
-        </ConditionalRender>
-        <ConditionalRender condition={socials.twitch}>
-          <SocialLink href={`https://twitter.com/${socials.twitter}`}>
-            <img src="https://placehold.it/24x16" />
-          </SocialLink>
-        </ConditionalRender>
-        <ConditionalRender condition={socials.instagram}>
-          <SocialLink href={`https://instagram.com/${socials.instagram}`}>
-            <img src="https://placehold.it/24x16" />
-          </SocialLink>
-        </ConditionalRender>
-      </ConditionalRender>
-    </RacerInfo>
-  </Card>
-);
+class RacerCard extends React.Component {
+  state = {
+    avatar: ''
+  }
+
+  async componentDidMount() {
+    const { username } = this.props || {};
+
+    this.setState({avatar: await getProfilePicture(username)});
+  }
+
+  render() {
+    const {
+      username, isListItem, socials = {}, profileImage,
+    } = this.props;
+
+    const { avatar } = this.state;
+
+    return (
+      <Card isListItem={isListItem}>
+        <Avatar height="50px" width="50px" image={avatar} />
+        <RacerInfo>
+          <RacerName href={`https://twitch.tv/${username}`}>
+            <h3>{username}</h3>
+          </RacerName>
+          <ConditionalRender condition={!isListItem}>
+            <ConditionalRender condition={socials.twitch}>
+              <SocialLink href={`https://twitch.tv/${socials.twitch}`}>
+                <FontAwesomeIcon icon={faTwitch} size="lg"/>
+              </SocialLink>
+            </ConditionalRender>
+            <ConditionalRender condition={socials.youtube}>
+              <SocialLink href={`https://youtube.com/${socials.youtube}`}>
+                <FontAwesomeIcon icon={faYoutube} size="lg" />
+              </SocialLink>
+            </ConditionalRender>
+            <ConditionalRender condition={socials.discord}>
+              <SocialLink href={`https://discordapp.com/invite/${socials.discord}`}>
+                <FontAwesomeIcon icon={faDiscord} size="lg" />
+              </SocialLink>
+            </ConditionalRender>
+            <ConditionalRender condition={socials.twitter}>
+              <SocialLink href={`https://twitter.com/${socials.twitter}`}>
+                <FontAwesomeIcon icon={faTwitter} size="lg" />
+              </SocialLink>
+            </ConditionalRender>
+            <ConditionalRender condition={socials.instagram}>
+              <SocialLink href={`https://instagram.com/${socials.instagram}`}>
+                <FontAwesomeIcon icon={faInstagram} size="lg" />
+              </SocialLink>
+            </ConditionalRender>
+          </ConditionalRender>
+        </RacerInfo>
+      </Card>
+    );
+  }
+}
 
 
 RacerCard.propTypes = {
   username: PropTypes.string.isRequired,
   isListItem: PropTypes.bool,
-  profileImage: PropTypes.string.isRequired,
   socials: PropTypes.shape({
     twitch: PropTypes.string,
     youtube: PropTypes.string,
@@ -105,6 +136,5 @@ RacerCard.defaultProps = {
     instagram: undefined,
   },
 };
-
 
 export default RacerCard;

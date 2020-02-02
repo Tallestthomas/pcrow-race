@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import Section from './shared/Section';
 import RacerCard from './RacerCard';
-import { users } from '../data/racers.json';
 
 const RacerContainer = styled.div`
   width: 100%;
@@ -12,17 +11,19 @@ const RacerContainer = styled.div`
 `;
 
 
-export default () => (
+export default ({ users }) => (
   <Section title="Racers">
     <RacerContainer>
-      { users.map((user) => (
-        <RacerCard
-          key={user.username}
-          username={user.username}
-          socials={user.socials}
-          profileImage={user.profileImage}
+      { users.map((user) => {
+        const { data } = user || {};
+
+        return(<RacerCard
+          key={data.username}
+          username={data.username}
+          socials={data.socials}
         />
-      ))}
+        )
+      })}
     </RacerContainer>
   </Section>
 );
