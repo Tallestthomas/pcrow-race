@@ -59,7 +59,7 @@ class Home extends React.Component {
         <Container>
           <MapSection users={users}/>
           <Rules />
-            <Routing />
+          <Routing />
           <Racers users={users} />
         </Container>
       </>
