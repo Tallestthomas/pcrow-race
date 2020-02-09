@@ -14,7 +14,7 @@ const RacerContainer = styled.div`
 export default ({ users = [] }) => (
   <Section title="Racers">
     <RacerContainer>
-      { users.map((user) => {
+      { users && users.map((user) => {
         const { data } = user || {};
 
         return (
