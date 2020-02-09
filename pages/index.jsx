@@ -1,8 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import styled, { createGlobalStyle } from 'styled-components';
 import {
-  Hero, MapSection, Rules, Racers,
+  Hero,
+  MapSection,
+  Rules,
+  Racers,
+  Routing,
 } from '../components';
 
 const GlobalStyle = createGlobalStyle`
@@ -53,7 +57,9 @@ class Home extends React.Component {
         <GlobalStyle />
         <Hero />
         <Container>
+          <MapSection users={users}/>
           <Rules />
+            <Routing />
           <Racers users={users} />
         </Container>
       </>

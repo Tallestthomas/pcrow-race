@@ -13,7 +13,6 @@ const RulesColumn = styled.div`
   padding: 1rem;
   padding-left: 0;
 `;
-
 const RulesList = styled.ul`
   list-style-type: none;
   padding: 0;
@@ -29,12 +28,13 @@ export default () => (
       <RulesColumn>
         <RulesList>
           <Rule>
-            1) Participants must feed all 16 dogs scattered across Hyrule and collect the treasure
+            1) Participants must feed all 16 dogs scattered across Hyrule and collect the treasure they lead to.
             they lead to.
           </Rule>
           <Rule>
-            2) The 16 dogs must be aquired in a specific order and in a certain way as detailed
-            below (think of it like a checklist: when all ticks are completed, the race is over).
+            2) The 16 dogs must be aquired in a specific order and in a certain way as detailed in
+            the route. (You will need to complete each of these steps in order. You can deviate from
+            the path, however you cannot, say, complete step 29 before you've completed 1-28)
           </Rule>
           <Rule>
             3) Racers must use a Nintendo Switch, no emulators allowed. DLC must also be disabled so
@@ -50,7 +50,7 @@ export default () => (
           </Rule>
           <Rule>
             5) Timing starts when gaining control of Link, Timing ends when the last treasure chest
-            is opened.
+            collectable is obtained (aka when you pick up the item after opening the chest)
           </Rule>
           <Rule>
             6) Fastest racer to aquire all 16 dog treasures wins $600, second place is $300, third

@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDiscord, faYoutube, faTwitch, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
 import Avatar from './shared/Avatar';
 import ConditionalRender from './shared/ConditionalRender';
-import getProfilePicture from '../util/getProfilePicture';
 
 const Card = styled.div`
   padding: 0.5rem;
@@ -62,32 +61,24 @@ class RacerCard extends React.Component {
     avatar: ''
   }
 
-  async componentDidMount() {
-    const { username } = this.props || {};
-
-    this.setState({avatar: await getProfilePicture(username)});
-  }
-
   render() {
     const {
       username, isListItem, socials = {}, profileImage,
     } = this.props;
 
-    const { avatar } = this.state;
-
     return (
       <Card isListItem={isListItem}>
-        <Avatar height="50px" width="50px" image={avatar} />
+        <a href={`https://twitch.tv/${username}`}>
+          <Avatar width="50px" height="50px" image={profileImage} />
+          </a>
         <RacerInfo>
           <RacerName href={`https://twitch.tv/${username}`}>
             <h3>{username}</h3>
           </RacerName>
           <ConditionalRender condition={!isListItem}>
-            <ConditionalRender condition={socials.twitch}>
-              <SocialLink href={`https://twitch.tv/${socials.twitch}`}>
+              <SocialLink href={`https://twitch.tv/${username}`}>
                 <FontAwesomeIcon icon={faTwitch} size="lg"/>
               </SocialLink>
-            </ConditionalRender>
             <ConditionalRender condition={socials.youtube}>
               <SocialLink href={`https://youtube.com/${socials.youtube}`}>
                 <FontAwesomeIcon icon={faYoutube} size="lg" />

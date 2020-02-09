@@ -17,12 +17,14 @@ export default ({ users }) => (
       { users.map((user) => {
         const { data } = user || {};
 
-        return(<RacerCard
-          key={data.username}
-          username={data.username}
-          socials={data.socials}
-        />
-        )
+        return (
+          <RacerCard
+            key={data.username}
+            username={data.username}
+            socials={data.socials}
+            profileImage={data.profileImage}
+          />
+        );
       })}
     </RacerContainer>
   </Section>
