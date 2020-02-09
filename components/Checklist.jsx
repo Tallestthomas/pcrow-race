@@ -17,13 +17,19 @@ const Checklist = () => (
     <ol>
       <ChecklistItem>
         Shrine of Resurrection Clip
-        <br />
-        <iframe src="https://player.twitch.tv/?autoplay=false&video=v549242555" frameBorder="0" allowFullScreen scrolling="no" height="378" width="620" title="SoR Clip" />
+        <ul>
+          <ChecklistItem>
+            <a href="https://www.twitch.tv/videos/549242555">Twitch Clip</a>
+          </ChecklistItem>
+        </ul>
       </ChecklistItem>
       <ChecklistItem>
         Back in Bounds / Sidestep
-        <br />
-        <iframe src="https://player.twitch.tv/?autoplay=false&video=v549248612" frameBorder="0" allowFullScreen scrolling="no" height="378" width="620" title="Back In Bounds" />
+        <ul>
+          <ChecklistItem>
+            <a href="https://www.twitch.tv/videos/549248612">Twitch Clip</a>
+          </ChecklistItem>
+        </ul>
       </ChecklistItem>
       <ChecklistItem>
         Great Plateau Tower
@@ -60,8 +66,11 @@ const Checklist = () => (
       </ChecklistItem>
       <ChecklistItem>
         Serenne to Snowfield BTB
-        <br />
-        <iframe src="https://player.twitch.tv/?autoplay=false&video=v549242134" frameBorder="0" scrolling="no" height="378" width="620" title="Sereene to Snowfield" />
+        <ul>
+          <ChecklistItem>
+            <a href="https://www.twitch.tv/videos/549242134">Twitch Clip</a>
+          </ChecklistItem>
+        </ul>
       </ChecklistItem>
       <ChecklistItem>
         Snowfield Stable Dog #3 & Dog #4
@@ -97,8 +106,11 @@ const Checklist = () => (
       </ChecklistItem>
       <ChecklistItem>
         Hateno to Dueling Peaks Windbomb
-        <br />
-        <iframe src="https://player.twitch.tv/?autoplay=false&video=v549242524" frameBorder="0" scrolling="no" height="378" width="620" title="Windbomb/BoomyZoomy/CrowBlox" />
+        <ul>
+          <ChecklistItem>
+            <a href="https://www.twitch.tv/videos/549242524">Twitch Clip</a>
+          </ChecklistItem>
+        </ul>
       </ChecklistItem>
       <ChecklistItem>
         Dueling Peaks Dog #9
@@ -133,10 +145,13 @@ const Checklist = () => (
       </ChecklistItem>
       <ChecklistItem>
         Greyson to Woodland Windbomb
-        <br />
-        <iframe src="https://player.twitch.tv/?autoplay=false&video=v549242524" frameBorder="0" scrolling="no" height="378" width="620" title="Windbomb/BoomyZoomy/CrowBlox" />
-        <br />
-        (same video, because it&apos;s the same trick)
+        <ul>
+          <ChecklistItem>
+            <a href="https://www.twitch.tv/videos/549242524">Twitch Clip</a>
+            {' '}
+            (same video, because it&apos;s the same trick)
+          </ChecklistItem>
+        </ul>
       </ChecklistItem>
       <ChecklistItem>
         Woodland Stable Dog #13
