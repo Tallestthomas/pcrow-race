@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
 const HeroImage = styled.div`
   height: 100vh;
@@ -29,13 +29,16 @@ const HeroTitle = styled.h1`
   font-family: "Plumpfull Black";
   font-size: 3rem;
   color: #fefefe;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px #585858;
 `;
 
 export default ({ children }) => (
   <HeroImage>
     <HeroOverlay>
       <HeroTitle>
-        PointCrow`s $1000 <br />
+        PointCrow`s $1000
+        <br />
         Breath of the Wild Race
       </HeroTitle>
     </HeroOverlay>

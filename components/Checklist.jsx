@@ -12,8 +12,8 @@ iframe {
 
 const Checklist = () => (
   <Section title="Routing">
-    <p> Each Dog Needs 4 Pieces of Fruit or Meat Fed to Lead to Treasure</p>
-    <p> Total items needed are 3000 Rupees, 90 Wood, 64 Fruit or Meat </p>
+    <h3> Each Dog Needs 4 Pieces of Fruit or Meat Fed to Lead to Treasure</h3>
+    <h3> Total items needed are 3000 Rupees, 90 Wood, 64 Fruit or Meat </h3>
     <ol>
       <ChecklistItem>
         Shrine of Resurrection Clip
