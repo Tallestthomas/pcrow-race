@@ -34,6 +34,13 @@ stroke-width: 2;
 };
 `;
 
+const MarkerText = styled.text`
+fill: #FDFFFC;
+font-size: 0.75rem;
+text-shadow: 2px 2px black;
+pointer-events: none;
+`;
+
 const AvatarRow = styled.div`
 display: flex;
 flex-flow: row;
@@ -287,13 +294,18 @@ export default ({ users = [] }) => {
           viewBox="0 0 928 690"
         >
           {nodes.map((node) => (
-            <Marker
-              key={node.id}
-              cx={xScale(node.x)}
-              cy={yScale(node.y)}
-              r="8"
-              onMouseEnter={() => handleUpdateHovered(node)}
-            />
+            <g>
+              <Marker
+                key={node.id}
+                cx={xScale(node.x)}
+                cy={yScale(node.y)}
+                r="8"
+                onMouseEnter={() => handleUpdateHovered(node)}
+              />
+              <MarkerText textAnchor="middle" x={xScale(node.x)} y={yScale(node.y + 0.5)}>
+                { node.id + 1 }
+              </MarkerText>
+            </g>
           ))}
           <g>
             <rect x={0} y={0} height="75px" width="100%" fill="white" />

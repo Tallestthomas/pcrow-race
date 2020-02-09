@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeroImage = styled.div`
-  height: 100vh;
+  height: 50vh;
   position: relative;
   background-image: url("/hero.jpg");
   background-position: center;
