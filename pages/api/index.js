@@ -1,7 +1,7 @@
 const fauna = require('faunadb');
 
 const { query: q } = fauna;
-const secret = process.env.faunaKey;
+const secret = process.env.faunakey;
 
 const client = new fauna.Client({ secret });
 
@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
         q.Paginate(
           q.Match(q.Index('all_users')),
         ),
-        ref => q.Get(ref)
+        (ref) => q.Get(ref),
       ),
     );
 
