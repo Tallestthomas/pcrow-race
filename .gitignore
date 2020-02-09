@@ -25,3 +25,5 @@ yarn-debug.log*
 yarn-error.log*
 
 next.config.js
+
+.now
