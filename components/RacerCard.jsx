@@ -14,6 +14,7 @@ const Card = styled.div`
   margin: 0.5rem 0;
   margin-right: 1rem;
   flex: 1 0 25%;
+  max-width: calc(33% - 1rem);
   box-shadow: ${(props) => (!props.isListItem ? '2px 2px 4px rgba(0, 0, 0, 0.3)' : '')};
 
   &:first-child {

@@ -29,16 +29,15 @@ export default () => (
         <RulesList>
           <Rule>
             1) Participants must feed all 16 dogs scattered across Hyrule and collect the treasure they lead to.
-            they lead to.
           </Rule>
           <Rule>
-            2) The 16 dogs must be aquired in a specific order and in a certain way as detailed in
+            2) The 16 dogs must be acquired in a specific order and in a certain way as detailed in
             the route. (You will need to complete each of these steps in order. You can deviate from
-            the path, however you cannot, say, complete step 29 before you've completed 1-28)
+            the path, however you cannot, say, complete step 29 before you&apos;ve completed 1-28)
           </Rule>
           <Rule>
             3) Racers must use a Nintendo Switch, no emulators allowed. DLC must also be disabled so
-            no unfair advantage can be given to those who don't have the funds to purchase the DLC.
+            no unfair advantage can be given to those who don&apos;t have the funds to purchase the DLC.
           </Rule>
         </RulesList>
       </RulesColumn>
@@ -46,14 +45,14 @@ export default () => (
         <RulesList>
           <Rule>
             4) Runs must start from a New Game and cannot be started with any glitch that persists
-            through save files (moonjump, skew, etc.)
+            through save files. (moonjump, skew, etc.)
           </Rule>
           <Rule>
             5) Timing starts when gaining control of Link, Timing ends when the last treasure chest
-            collectable is obtained (aka when you pick up the item after opening the chest)
+            collectable is obtained. (aka when you pick up the item after opening the chest)
           </Rule>
           <Rule>
-            6) Fastest racer to aquire all 16 dog treasures wins $600, second place is $300, third
+            6) Fastest racer to acquire all 16 dog treasures wins $600, second place is $300, third
             gains $100. Cheers!
           </Rule>
         </RulesList>

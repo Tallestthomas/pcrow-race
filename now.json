@@ -1,4 +1,7 @@
 {
+  "env": {
+    "FAUNA_KEY": "@faunakey"
+  },
   "build": {
     "env": {
       "FAUNA_KEY": "@faunakey"

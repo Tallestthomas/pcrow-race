@@ -12,8 +12,9 @@ const RacerContainer = styled.div`
 
 export default ({ users = [] }) => (
   <Section title="Racers">
+    {users.length > 0 && (
     <RacerContainer>
-      { users && users.map((user) => {
+      {users.map((user) => {
         const { data } = user || {};
 
         return (
@@ -26,5 +27,6 @@ export default ({ users = [] }) => (
         );
       })}
     </RacerContainer>
+    )}
   </Section>
 );
