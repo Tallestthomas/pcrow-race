@@ -1,6 +1,7 @@
 const fauna = require('faunadb');
 
 const { query: q } = fauna;
+// getting this from now secrets
 const secret = process.env.FAUNA_KEY;
 
 const client = new fauna.Client({ secret });
