@@ -1,13 +1,7 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import styled, { createGlobalStyle } from 'styled-components';
-import {
-  Hero,
-  MapSection,
-  Rules,
-  Racers,
-  Routing,
-} from '../components';
+import { Hero, MapSection, Rules, Racers, Routing } from '../components';
 
 const GlobalStyle = createGlobalStyle`
 @font-face {
@@ -39,8 +33,8 @@ const Container = styled.div`
 
 class Home extends React.Component {
   state = {
-    users: []
-  }
+    users: [],
+  };
 
   async componentDidMount() {
     const data = await fetch('/api');
@@ -56,12 +50,14 @@ class Home extends React.Component {
       <>
         <GlobalStyle />
         <Hero />
-        <Container>
-          <MapSection users={users}/>
-          <Rules />
-          <Routing />
-          <Racers users={users} />
-        </Container>
+        {users && (
+          <Container>
+            <MapSection users={users} />
+            <Rules />
+            <Routing />
+            <Racers users={users} />
+          </Container>
+        )}
       </>
     );
   }

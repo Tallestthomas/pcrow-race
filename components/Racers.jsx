@@ -10,7 +10,6 @@ const RacerContainer = styled.div`
   flex-flow: row wrap;
 `;
 
-
 export default ({ users = [] }) => (
   <Section title="Racers">
     <RacerContainer>
