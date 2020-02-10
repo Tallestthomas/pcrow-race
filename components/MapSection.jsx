@@ -309,7 +309,7 @@ export default ({ users = [] }) => {
           ))}
           <g>
             <rect x={0} y={0} height="75px" width="100%" fill="white" />
-            <text x={0} y="1rem" stroke="black">{hoveredNode.text}</text>
+            <text x={0} y="16px" stroke="black">{hoveredNode.text}</text>
             <foreignObject x={0} y="1.5rem" width="100%" height="60px">
               <AvatarRow>
                 { currentRacers.map((racer) => (
