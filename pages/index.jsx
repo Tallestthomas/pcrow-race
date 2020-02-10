@@ -1,6 +1,7 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
 import styled, { createGlobalStyle } from 'styled-components';
+import { initGA, logPageView } from '../googleAnalytics';
 import { Credits, Hero, MapSection, Rules, Racers, Routing } from '../components';
 
 const GlobalStyle = createGlobalStyle`
@@ -37,6 +38,12 @@ class Home extends React.Component {
   };
 
   async componentDidMount() {
+    if(!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true
+    }
+    logPageView();
+
     const data = await fetch('/api');
     const users = await data.json();
 

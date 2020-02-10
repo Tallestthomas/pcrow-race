@@ -117,7 +117,7 @@ const nodes = [
     x: 37.5,
     y: 30,
     id: 11,
-    text: '12) Serenne Stable Dog #2',
+    text: '12) Outskirt Stable Dog #2',
   },
   {
     x: 34.5,
@@ -301,6 +301,7 @@ export default ({ users = [] }) => {
                 cy={yScale(node.y)}
                 r="8"
                 onMouseEnter={() => handleUpdateHovered(node)}
+                onMouseLeave={() => handleUpdateHovered({ text: 'Hover over a node to see all racers at that location' })}
               />
               <MarkerText textAnchor="middle" x={xScale(node.x)} y={yScale(node.y + 0.5)}>
                 { node.id + 1 }
