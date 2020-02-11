@@ -111,13 +111,13 @@ const nodes = [
     x: 39,
     y: 62,
     id: 10,
-    text: '11) Serenne Stable Dog #2',
+    text: '11) Outskirt Stable Dog #2',
   },
   {
     x: 37.5,
     y: 30,
     id: 11,
-    text: '12) Outskirt Stable Dog #2',
+    text: '12) Serenne Stable Dog #2',
   },
   {
     x: 34.5,

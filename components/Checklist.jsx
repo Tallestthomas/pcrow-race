@@ -119,10 +119,10 @@ const Checklist = () => (
         Wetland Stable Dog #10
       </ChecklistItem>
       <ChecklistItem>
-        Activate Shine at Foothill Stable, Buy 1 Fire Elixer
+        Activate Shrine at Foothill Stable, Buy 1 Fire Elixer
         <ul>
           <ChecklistItem>
-            Fire Elixer Sold by Girl at Cooking Pot
+            Fire Elixir Sold by Girl at Cooking Pot
           </ChecklistItem>
         </ul>
       </ChecklistItem>
@@ -168,7 +168,7 @@ const Checklist = () => (
         Gerudo Canyon Stable Dog #14
       </ChecklistItem>
       <ChecklistItem>
-        Kara Kara Bazzar Dog #15, Talk to Rhondson
+        Kara Kara Bazaar Dog #15, Talk to Rhondson
       </ChecklistItem>
       <ChecklistItem>
         Talk to Hudson #4

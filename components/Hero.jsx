@@ -21,6 +21,7 @@ const HeroOverlay = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
 `;
 
 const HeroTitle = styled.h1`
@@ -28,6 +29,18 @@ const HeroTitle = styled.h1`
   padding: 0;
   font-family: "Plumpfull Black";
   font-size: 3rem;
+  color: #fefefe;
+  letter-spacing: 3px;
+  text-shadow: 3px 3px #585858;
+  text-align: center;
+`;
+
+const HeroSubTitle = styled.h2`
+  margin: 0;
+  padding: 0;
+  padding-top: 1rem;
+  font-family: "Plumpfull Black";
+  font-size: 2rem;
   color: #fefefe;
   letter-spacing: 3px;
   text-shadow: 3px 3px #585858;
@@ -41,6 +54,9 @@ export default ({ children }) => (
         <br />
         Breath of the Wild Race
       </HeroTitle>
+      <HeroSubTitle>
+        February 23rd, 1PM PST
+      </HeroSubTitle>
     </HeroOverlay>
     {children}
   </HeroImage>
