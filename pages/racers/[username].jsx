@@ -56,7 +56,6 @@ class RacerPage extends React.Component {
     this.state = {
       username: '',
       currentPosition: 0,
-      users: []
     };
   }
 
@@ -71,24 +70,11 @@ class RacerPage extends React.Component {
     const data = await fetch(`/api/user/${username}`);
     const user = await data.json();
 
-    this.interval = setInterval(async () => await this.fetchUsers(), 5000);
-
     this.setState({
       username,
       currentPosition: user[0].data.currentPosition,
     });
   }
-
-  componentWillUnmount() {
-    this.interval = clearInterval();
-  }
-
-  fetchUsers = async () => {
-    const data = await fetch('/api');
-    const users = await data.json();
-
-    this.setState({ users });
-  };
 
   handleNextStep = () => {
     const { currentPosition, username } = this.state;
@@ -135,7 +121,7 @@ class RacerPage extends React.Component {
               Next Step
             </Button>
           </div>
-          <MapSection users={users}/>
+          <MapSection />
         </Container>
       </>
     );

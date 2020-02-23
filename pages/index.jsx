@@ -38,7 +38,7 @@ class Home extends React.Component {
     users: [],
   };
 
-  interval = null;
+  //interval = null;
 
   async componentDidMount() {
     if (!window.GA_INITIALIZED) {
@@ -48,12 +48,6 @@ class Home extends React.Component {
     logPageView();
 
     await this.fetchUsers();
-
-    this.interval = setInterval(async () => await this.fetchUsers(), 5000);
-  }
-
-  componentWillUnmount() {
-    this.interval = clearInterval();
   }
 
   fetchUsers = async () => {
@@ -72,7 +66,7 @@ class Home extends React.Component {
         <Hero />
         {users && (
           <Container>
-            <MapSection users={users} />
+            <MapSection />
             <Rules />
             <Routing />
             <Racers users={users} />
