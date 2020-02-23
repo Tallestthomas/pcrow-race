@@ -6,16 +6,29 @@ const RulesContainer = styled.div`
   display: flex;
   flex-flow: row;
   width: 100%;
+
+  @media screen and (max-width: 650px) {
+    flex-flow: column;
+  }
 `;
 
 const RulesColumn = styled.div`
   flex: 1;
   padding: 1rem;
   padding-left: 0;
+
+  @media screen and (max-width: 650px) {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
 `;
 const RulesList = styled.ul`
   list-style-type: none;
   padding: 0;
+
+  @media screen and (max-width: 650px) {
+    margin: 0;
+  }
 `;
 
 const Rule = styled.li`
@@ -28,7 +41,8 @@ export default () => (
       <RulesColumn>
         <RulesList>
           <Rule>
-            1) Participants must feed all 16 dogs scattered across Hyrule and collect the treasure they lead to.
+            1) Participants must feed all 16 dogs scattered across Hyrule and collect the treasure
+            they lead to.
           </Rule>
           <Rule>
             2) The 16 dogs must be acquired in a specific order and in a certain way as detailed in
@@ -37,7 +51,8 @@ export default () => (
           </Rule>
           <Rule>
             3) Racers must use a Nintendo Switch, no emulators allowed. DLC must also be disabled so
-            no unfair advantage can be given to those who don&apos;t have the funds to purchase the DLC.
+            no unfair advantage can be given to those who don&apos;t have the funds to purchase the
+            DLC.
           </Rule>
         </RulesList>
       </RulesColumn>

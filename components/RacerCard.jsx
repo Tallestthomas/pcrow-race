@@ -20,6 +20,15 @@ const Card = styled.div`
   &:first-child {
     margin-left: 0;
   }
+
+  @media screen and (max-width: 890px) {
+    max-width: calc(50% - 1rem);
+  flex: 1 0 40%;
+  }
+  @media screen and (max-width: 600px) {
+    max-width: calc(100% - 1rem);
+  flex: 1 0 100%;
+  }
 `;
 
 const RacerInfo = styled.div`
@@ -29,8 +38,6 @@ const RacerInfo = styled.div`
   h3 {
     font-family: "Plumpfull Black";
     margin: 0.5rem auto;
-  }
-
   }
 `;
 

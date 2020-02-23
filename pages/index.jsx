@@ -1,5 +1,6 @@
 import React from 'react';
 import fetch from 'isomorphic-unfetch';
+import useSWR from 'swr';
 import styled, { createGlobalStyle } from 'styled-components';
 import { initGA, logPageView } from '../googleAnalytics';
 import { Credits, Hero, MapSection, Rules, Racers, Routing } from '../components';
@@ -37,18 +38,30 @@ class Home extends React.Component {
     users: [],
   };
 
+  interval = null;
+
   async componentDidMount() {
-    if(!window.GA_INITIALIZED) {
+    if (!window.GA_INITIALIZED) {
       initGA();
-      window.GA_INITIALIZED = true
+      window.GA_INITIALIZED = true;
     }
     logPageView();
 
+    await this.fetchUsers();
+
+    this.interval = setInterval(async () => await this.fetchUsers(), 5000);
+  }
+
+  componentWillUnmount() {
+    this.interval = clearInterval();
+  }
+
+  fetchUsers = async () => {
     const data = await fetch('/api');
     const users = await data.json();
 
     this.setState({ users });
-  }
+  };
 
   render() {
     const { users } = this.state;
@@ -63,7 +76,7 @@ class Home extends React.Component {
             <Rules />
             <Routing />
             <Racers users={users} />
-              <Credits />
+            <Credits />
           </Container>
         )}
       </>
