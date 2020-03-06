@@ -63,12 +63,8 @@ class MapSection extends React.Component {
     users: [],
   };
 
-  interval = null;
-
   async componentDidMount() {
     await this.fetchUsers();
-
-    this.interval = setInterval(async () => await this.fetchUsers(), 5000);
   }
 
   fetchUsers = async () => {

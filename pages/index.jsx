@@ -38,8 +38,6 @@ class Home extends React.Component {
     users: [],
   };
 
-  //interval = null;
-
   async componentDidMount() {
     if (!window.GA_INITIALIZED) {
       initGA();
